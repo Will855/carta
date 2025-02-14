@@ -35,7 +35,7 @@ h2 {
 
 .dots::after {
     content: '';
-    animation: dotAnimation 1.5s infinite;
+    animation: dotAnimation 2s infinite;
 }
 
 .poema {
