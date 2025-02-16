@@ -61,6 +61,14 @@ body {
     border-radius: 2px;
 }
 
+.progress-bar {
+    width: 0%;
+    transition: width 3s linear; /* ¡Faltaba linear! */
+    background: var(--accent-color);
+    height: 4px;
+    position: absolute;
+}
+
 /* Loader animado */
 .flower-loader {
     font-size: 4.5em;
@@ -122,6 +130,7 @@ h2 {
     p {
         opacity: 1 !important;
         transform: none !important;
+        will-change: transform, opacity;
     }
 }
 
@@ -193,17 +202,21 @@ h2 {
 
 /* Cursor */
 @keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
+.typing-cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+/* Animación para confetti */
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
 
 /* Responsividad */
 @media (max-width: 768px) {

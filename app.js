@@ -26,27 +26,13 @@ document.body.addEventListener('click', () => {
     bgMusic.play();
 });*/
 
-document.querySelector('.progress-bar').style.width = '100%';
+document.querySelector('.progress-bar').style.transition = 'width 3s linear';
 
 setTimeout(() => {
+
     const preloader = document.querySelector('.preloader');
     preloader.classList.add('hide');
 
-    gsap.fromTo('.poema-container',
-        { opacity: 0, y: 50, scale: 0.95 },
-        {
-            duration: 2,
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            ease: "elastic.out(1, 0.5)",
-            onComplete: () => {
-                // Iniciar efecto máquina de escribir después de la animación
-                typePoem();
-            }
-        }
-    );
-    
     const poemaContainer = document.getElementById('poema');
     poemaContainer.style.display = 'block';
 
@@ -94,8 +80,24 @@ setTimeout(() => {
     function animateElement(el) {
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
-        el.style.transition = 'all 0.5s ease';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)'; // Más suave
     }
+
+    gsap.fromTo('.poema-container',
+        { opacity: 0, y: 50, scale: 0.95 },
+        {
+            duration: 2,
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            ease: "elastic.out(1, 0.5)",
+            onComplete: () => {
+                // Iniciar efecto máquina de escribir después de la animación
+                typePoem();
+            }
+        }
+    );
+    
 
     function getRandomColor() {
         return `hsl(${Math.random() * 360}, 70%, 60%)`;
@@ -121,7 +123,7 @@ setTimeout(() => {
     }
 
     setTimeout(typePoem, 700);
-}, 3000);
+}, 3500);
 
 // Interacción con emojis
 // document.addEventListener('DOMContentLoaded', () => {
