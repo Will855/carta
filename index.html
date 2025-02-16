@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta de Amor</title>
+    <title>Carta de Amor Interactiva</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;600&display=swap">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Preloader -->
+    <div class="particles"></div>
+
     <div class="preloader">
-        <h1>Hola amor</h1>
-        <h2>tu carta está cargando<span class="dots"></span></h2>
+        <div class="progress-bar"></div>
+        <div class="flower-loader">🌼</div>
+        <h1>Hola Fefi 💌</h1>
+        <h2>Preparando tu sorpresa<span class="dots"></span></h2>
     </div>
 
-    <div class="poema" id="poema"></div>
+    <div class="poema-container">
+        <div class="vintage-border"></div>
+        <div class="poema" id="poema"></div>
+        <!-- <div class="interactive-emoji">✨ Toca para magia ✨</div> -->
+    </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,73 +1,252 @@
+/* Variables de colores */
+:root {
+    --primary-color: #f8c8dc;
+    --secondary-color: #f3a8c7;
+    --accent-color: #ff85a2;
+    --pastel-pink: #ffdde2;
+    --soft-lavender: #e8d7ff;
+}
+
+/* Estilos globales */
 body {
     margin: 0;
     padding: 0;
-    background-color: #ff99cc;
-    font-family: 'Georgia', serif;
-    color: #fff;
+    background: linear-gradient(135deg, var(--pastel-pink), var(--soft-lavender));
+    font-family: 'Quicksand', sans-serif;
+    color: #6d4a69;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
+
+/* Partículas animadas */
+.particles::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="3" fill="rgba(255,255,255,0.3)"/></svg>');
+    animation: float 20s linear infinite;
+}
+
+
+/* Preloader */
 .preloader {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: #ff99cc;
+    background: rgba(248, 200, 220, 0.98);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: opacity 0.5s;
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.preloader.hide {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    pointer-events: none;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--accent-color);
+    width: 0%;
+    transition: width 3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Loader animado */
+.flower-loader {
+    font-size: 4.5em;
+    animation: float 3s ease-in-out;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 2px 4px rgba(114, 65, 93, 0.1));
+}
+
+/* Títulos */
 h1 {
-    color: #ffffff;
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    color: #6d4a69;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 h2 {
-    color: #ffffff;
-    font-size: 1.5em;
-    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: #8b6d86;
+    font-size: 1.4em;
 }
 
-.dots::after {
-    content: '';
-    animation: dotAnimation 1.5s infinite;
+/* Contenedor del poema */
+.poema-container {
+    position: relative;
+    padding: 40px;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(109, 74, 105, 0.08);
+    border: 2px solid var(--pastel-pink);
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+/* acomodar */
+.vintage-border {
+    position: absolute;
+    top: 3%;
+    left: 0%;
+    width: 98%;
+    height: 96%;
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    pointer-events: none;
 }
 
 .poema {
-    padding: 40px 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    font-size: 1.2em;
-    line-height: 1.6;
-    display: none;
-    opacity: 0;
-    transition: opacity 1s;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Playfair Display', serif;
+    color: #6d4a69;
+    font-size: 1.6em;
+    line-height: 1.8;
+
+    p {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
-
-@keyframes dotAnimation {
-    0%, 20% { content: '.'; }
-    40% { content: '..'; }
-    60%, 100% { content: '...'; }
-}
-
+/* Cursor animado */
 .typing-cursor {
-    display: inline-block;
-    width: 3px;
-    background-color: #fff;
     animation: blink 1s infinite;
+    color: var(--accent-color);
 }
 
+/* Emoji interactivo */
+.interactive-emoji {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Cursor */
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 
+/* Responsividad */
+@media (max-width: 768px) {
+    .poema-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .poema {
+        font-size: 1.4em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 375px) {
+
+    /* iPhone X */
+    .poema-container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .poema {
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .interactive-emoji {
+        bottom: 10px;
+    }
+}
