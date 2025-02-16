@@ -67,10 +67,10 @@ setTimeout(() => {
                 isAddingNewLine = false;
                 setTimeout(typePoem, 600);
 
-                window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: 'smooth'
-                });
+                // window.scrollTo({
+                //     top: document.body.scrollHeight,
+                //     behavior: 'smooth'
+                // });
             }
         } else {
             addFinalEffects();

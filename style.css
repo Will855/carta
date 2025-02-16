@@ -112,10 +112,10 @@ h2 {
 /* acomodar */
 .vintage-border {
     position: absolute;
-    top: 3%;
+    top: 2%;
     left: 0%;
     width: 98%;
-    height: 96%;
+    height: 97%;
     border: 2px solid var(--accent-color);
     border-radius: 15px;
     pointer-events: none;
