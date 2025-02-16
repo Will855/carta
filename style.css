@@ -11,13 +11,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ff99cc;
-    font-family: 'Georgia', serif;
-    color: #fff;
+    background: linear-gradient(135deg, var(--pastel-pink), var(--soft-lavender));
+    font-family: 'Quicksand', sans-serif;
+    color: #6d4a69;
     min-height: 100vh;
     overflow-x: hidden;
 }
-
 
 /* Partículas animadas */
 .particles::before {
@@ -89,33 +88,44 @@ h2 {
 /* Contenedor del poema */
 .poema-container {
     position: relative;
+    padding: 40px;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(109, 74, 105, 0.08);
+    border: 2px solid var(--pastel-pink);
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 1s ease;
 }
 
-.dots::after {
-    content: '';
-    animation: dotAnimation 1.5s infinite;
+/* acomodar */
+.vintage-border {
+    position: absolute;
+    top: 3%;
+    left: 0%;
+    width: 98%;
+    height: 96%;
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    pointer-events: none;
 }
 
 .poema {
-    padding: 40px 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    font-size: 1.2em;
-    line-height: 1.6;
-    display: none;
-    opacity: 0;
-    transition: opacity 1s;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Playfair Display', serif;
+    color: #6d4a69;
+    font-size: 1.6em;
+    line-height: 1.8;
+
+    p {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
-
-@keyframes dotAnimation {
-    0%, 20% { content: '.'; }
-    40% { content: '..'; }
-    60%, 100% { content: '...'; }
-}
-
+/* Cursor animado */
 .typing-cursor {
     animation: blink 1s infinite;
     color: var(--accent-color);
