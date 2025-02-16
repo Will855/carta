@@ -1,11 +1,21 @@
 const textoPoema = [
-    "Desde que entraste en mi vida, has creado un lazo invisible que me atrae hacia ti de una manera que nunca imaginé posible.",
+    "En tu amor encuentro esa luz que Newton explicó con números,",
+    "la fuerza silenciosa que nos une sin necesidad de palabras ✨.",
     "",
-    "Cada día a tu lado es una nueva aventura, un descubrimiento constante. Tu risa ilumina mis momentos más oscuros, y tus palabras son el faro que guía mi camino. En tu abrazo, encuentro un refugio, un lugar donde el tiempo se detiene y todo lo que importa eres tú y yo.",
+    "Eres el sol que ilumina mis días y la luna que guía mis noches 🌙,",
+    "un imán que atrae hasta mis gestos más simples hacia tu calor 🔗.",
     "",
-    "A veces, me pregunto cómo sería mi vida sin tu luz. La idea de perderte es aterradora, pues has transformado mi mundo en un lugar lleno de color 🌈 y significado ✨. Eres mi inspiración, mi razón para seguir adelante, y quiero que sepas cuánto significas para mí 💖.",
+    "No soy científico, pero sé que contigo la vida tiene más sentido:",
+    "tus abrazos son la gravedad que me mantiene firme en la tierra 🌍,",
+    "tus besos, las estrellas que me enseñan a brillar 💫.",
     "",
-    "Espero que esta carta 💌 te recuerde lo especial que eres y lo profundamente que te valoro 💞. Estoy agradecido por cada instante que compartimos y por el amor que florece entre nosotros 🌹."
+    "Juntos escribimos leyes nuevas:",
+    "donde hay dudas, creamos certezas 📖;",
+    "donde hay frío, inventamos el verano 🔆.",
+    "",
+    "Y si un día la física olvida nuestro secreto 💌,",
+    "basta un roce de tus manos para recordar...",
+    "que eres la gravedad que me atrae en el vasto universo 💞."
 ];
 
 /* Iniciar música de fondo
